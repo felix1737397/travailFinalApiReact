@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 2px;
+  padding: 0;
+}
+
+body {
+  font-family: Oxygen, sans-serif;
+  background-color: #FFCC99;
+}
+
+.bouton{
+  background-color: #FFCC99;
+  color: black;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px clr-gray300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+  border-radius: 1.5em;
+}
+
+
+.cover{
+  width: 100%;
+  height: 78%;
+}
+
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+}
+
+.button1:hover {
+  background-color: red;
+  color: white;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+}
+
+.button2:hover {
+  background-color: green;
+  color: white;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
