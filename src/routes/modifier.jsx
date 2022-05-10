@@ -19,7 +19,6 @@ export default function Ajouter() {
     let [collection, setCollection] = useState();
     let [tome, setTome] = useState();
     let [image, setImage] = useState();
-    let [utilisateur, setUtilisateur] = useState();
     let [mdp, setMotdePasse] = useState();
 
     let [message, setMessage] = useState("");
@@ -58,7 +57,7 @@ export default function Ajouter() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await Axios.put(`http://127.0.0.1/travailFinalApiPhp/livres/${params.isbn}`,{
+            const response = await Axios.put(`http://127.0.0.1/travailFinalApiPhp/livres/${params.isbn}/${mdp}`,{
                 prenom_auteur: prenom_auteur,
                 nom_famille_auteur: nom_famille_auteur,
                 titre: titre,
@@ -70,11 +69,10 @@ export default function Ajouter() {
                 tome: tome,
                 image: image,
             });
-            navigate('/');
+            setMessage("Livre modifié avec succès");
         }
         catch(error){
-
-            setMessage("Erreur lors de la modification du livre");
+            setMessage("Erreur lors de la modification du livre, veuillez corriger les champs et valider votre clé d'api");
             console.log(error);
         }
     };
@@ -146,13 +144,7 @@ export default function Ajouter() {
                 onChange={(e) => setImage(e.target.value)}
             />
             <input
-            type="text"
-            value={utilisateur}
-            placeholder ="Utilisateur"
-            onChange={(e) => setUtilisateur(e.target.value)}
-            />
-            <input
-            type="text"
+            type="password"
             value={mdp}
             placeholder ="Mot de passe"
             onChange={(e) => setMotdePasse(e.target.value)}
