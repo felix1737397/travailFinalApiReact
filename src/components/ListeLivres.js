@@ -10,7 +10,7 @@ function App() {
 
   const fetchLivres = async () => {
     const { data } = await Axios.get(
-      "http://127.0.0.1/travailFinalAPI/livres"
+      "http://127.0.0.1/travailFinalApiPhp/livres"
     );
     const livres = data;
     setLivres(livres);

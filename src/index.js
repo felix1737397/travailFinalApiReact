@@ -21,8 +21,7 @@ render(
     <Route path="/livre" element={<Livre />}>
     <Route path =":isbn" element={<Livre />} />
   </Route>
-  <Route path="/modifier" element={<Modifier />} >
-    <Route path =":isbn" element={<Modifier />} />
+  <Route path="/modifier/:isbn" element={<Modifier />} >
   </Route>
      <Route
      path="*"

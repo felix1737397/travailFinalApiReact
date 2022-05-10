@@ -20,7 +20,7 @@ export default function Livre() {
   const [description, setDescription] = useState([]);
   const fetchLivres = async () => {
     const { data } = await Axios.get(
-      `http://127.0.0.1/travailFinalAPI/livres?isbn=${isbn}`);
+      `http://127.0.0.1/travailFinalApiPhp/livres?isbn=${isbn}`);
     const livres = data;
     setLivres(livres);
   };
@@ -48,9 +48,12 @@ export default function Livre() {
       }
     }
 
-  let modifierLivre = async () => {
+
+  let modifierLivre = async ( ) => {
     try{
-      navigate(`/modifier/${isbn}`);
+      livres.map((livres) => {
+      navigate(`/modifier/${livres.isbn}`);
+      });
     }
     catch(error){
       setMessage("Erreur lors de la modification du livre");
