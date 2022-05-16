@@ -28,7 +28,7 @@ export default function Ajouter() {
 
       try{
         const { data } = await Axios.get(
-          `http://127.0.0.1/travailFinalApiPhp/livres?isbn=${params.isbn}`
+          `https://quiet-river-01356.herokuapp.com/livres?isbn=${params.isbn}`
         );
         const livres = data;
         setLivres(livres);
@@ -57,7 +57,7 @@ export default function Ajouter() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await Axios.put(`http://127.0.0.1/travailFinalApiPhp/livres/${params.isbn}/${mdp}`,{
+            const response = await Axios.put(`https://quiet-river-01356.herokuapp.com/livres/${params.isbn}/${mdp}`,{
                 prenom_auteur: prenom_auteur,
                 nom_famille_auteur: nom_famille_auteur,
                 titre: titre,

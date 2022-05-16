@@ -10,7 +10,7 @@ function App() {
 
   const fetchLivres = async () => {
     const { data } = await Axios.get(
-      "http://127.0.0.1/travailFinalApiPhp/livres"
+      "https://quiet-river-01356.herokuapp.com/livres"
     );
     const livres = data;
     setLivres(livres);

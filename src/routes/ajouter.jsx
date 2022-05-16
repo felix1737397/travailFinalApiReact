@@ -20,7 +20,7 @@ export default function Ajouter() {
     let handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await Axios.post("http://127.0.0.1/travailFinalApiPhp/livres",{
+            const response = await Axios.post("https://quiet-river-01356.herokuapp.com/livres",{
                 prenom_auteur: prenom_auteur,
                 nom_famille_auteur: nom_famille_auteur,
                 titre: titre,

@@ -20,7 +20,7 @@ export default function Livre() {
   const [description, setDescription] = useState([]);
   const fetchLivres = async () => {
     const { data } = await Axios.get(
-      `http://127.0.0.1/travailFinalApiPhp/livres?isbn=${isbn}`);
+      `https://quiet-river-01356.herokuapp.com/livres?isbn=${isbn}`);
     const livres = data;
     setLivres(livres);
   };
@@ -39,7 +39,7 @@ export default function Livre() {
   let supprimerLivre = async () => {
     try{
       const { data } = await Axios.delete(await Axios.delete(
-        `http://127.0.0.1/travailFinalAPI/livres/${isbn}`));
+        `https://quiet-river-01356.herokuapp.com/livres/${isbn}`));
       }
       catch(error){
         setMessage("Erreur lors de la suppression du livre");
